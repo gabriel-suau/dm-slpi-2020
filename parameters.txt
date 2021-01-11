@@ -1,0 +1,73 @@
+MaxIteration
+50
+
+Tolerance
+1e-7
+
+# Mettre la valeur 1 si vous voulez lire une matrice depuis un fichier Matrix Market
+# Sinon, mettre la valeur 0
+IsMatrixMarket
+0
+
+# Nom du fichier Matrix Market duquel lire la matrice.
+# MatrixMarketfile est ignoré si IsMatrixMarket a la valeur 0
+# Symmetric Positive Definite:
+#           gr_30_30.mtx
+#           s3rmt3m3.mtx                # Matrice de la question 5)
+#           bcsstk13.mtx
+#           nos%.mtx with % = 1 to 7
+# Unsymmetric:
+#           fidap002.mtx
+#           impcol_a.mtx
+MatrixMarketFile
+matrix_market_files/s3rmt3m3.mtx
+
+# Taille de la matrice SDP générée aléatoirement. 
+# MatrixSize est ignoré si isMatrixMarket vaut 1
+MatrixSize
+200
+
+# Mettre la valeur 1 pour un stockage creux
+# Mettre la valeur 0 pour un stockage dense
+# Si IsMatrixMarket a la valeur 0, IsMatrixSparse prend automatiquement la valeur 0
+# afin d'éviter de stocker la matrice générée aléatoirement (dense) dans une matrice creuse
+IsMatrixSparse
+0
+
+# Mettre la valeur 1 si la matrice est symétrique
+# Sinon, mettre la valeur 0
+# Important car Matrix Market stocke différemment les matrices symétrique et les matrices non-symétriques.
+IsMatrixSymmetric
+1
+
+# Problème stationnaire ou instationnaire (question 5)
+# Mettre la valeur à 1 pour les questions 1 à 4
+# Mettre à 0 pour le problème instationnaire de la question 5
+IsStationnary
+0
+
+# Si problème instationnaire, choisir le pas de temps
+# Si isStationnary vaut 1, ce paramètre est ignoré.
+TimeStep
+1e-2
+
+# Nom des solvers à tester séparés par une espace
+# Supprimez les noms des solvers que vous ne voulez pas tester.
+# Solvers disponibles et acronymes
+#         GPO = Gradient à Pas Optimal
+#         GPOPrecJac = Gradient à Pas Optimal Préconditionné Jacobi à gauche
+#         RM = Résidu Minimum
+#         RMPRecJac = Résidu Minimum Préconditionné Jacobi à gauche
+#         GC = Gradent Conjugué
+#         GCPrecJac = Gradient Conjugué Préconditionné Jacobi à gauche
+#         FOM = Full Orthogonalization Method
+#         GMRes = Generalized Minimum Residual
+#         SPDFOM = Symmetric Positive Definite FOM
+#         SPDGMRes = Symmetric Positive Definite GMRes
+Solvers
+FOM SPDFOM
+
+# Dimension de l'espace de Krylov
+# Sans importance si on n'utilise pas de solveur de Krylov
+KrylovDimension
+10
