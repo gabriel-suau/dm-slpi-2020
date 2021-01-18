@@ -4,6 +4,14 @@ C++ implementation of various iterative linear solvers. We did not bother to cre
 
 This code was an assignment, but it may be upgraded in the future.
 
+## Credits
+
+All developpers are students at ENSEIRB-MATMECA, a french engineering school located in Talence.
+
+* Robin Colombier
+* Yohann Le Moulec
+* Gabriel Suau
+
 ## Main features
 * Minimal Residual, Optimal Step Gradient, Conjugate Gradient (also available with a diagonal preconditionner)
 * Krylov Methods : FOM, GMRes and their SPD versions (not really working yet)
